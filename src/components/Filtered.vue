@@ -6,7 +6,7 @@
         <h1 class="text-center">Data tidak ada!</h1>
       </div>
       <div v-if="this.filtered.length >= 1" class="grid grid-cols-3 grid-rows-auto gap-3">
-        <div class="" v-for="l in filtered" :key="l">
+        <div class="" v-for="(l,idx) in filtered" :key="idx">
           <div class="mx-2 mb-auto rounded-t-full bg-white overflow-hidden shadow-lg p-5 border border-purple-500 w-6xl  pt-4 pb-4">
             <a>
               <img class="w-full p-4 rounded-t-full" v-bind:src="l.thumbnailUrl" alt="Sunset in the mountains">
@@ -14,7 +14,7 @@
                 <div class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2">{{l.title}}</div>
               </a>
             </a>
-            <button class="w-full font-bold h-10 bg-red-500" @click="add()">
+            <button class="w-full font-bold h-10 bg-red-500" @click="add(l)">
               Add to Cart
             </button>
           </div>
@@ -32,8 +32,9 @@ export default {
     check() {
       console.log(this.search)
     },
-    add(){
-      this.$emit("add-cart", this.addCart)
+    add(l){
+      console.log(l)
+      this.$emit("add-cart", l)
     }
   }
 }

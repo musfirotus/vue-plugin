@@ -2,9 +2,9 @@
   <div class="container mx-auto pt-5 z-0">
     <h1 class="text-center font-bold mb-5 text-5xl text-black bg-blue-300">Products</h1>
     <search :message="message" @cari-data="cariData" />
-    <cart :carts="carts" />
-    <filtered :filtered="filtered" />
-    <item :data="data" />
+    <cart v-on:remove-cart="removeCart" :carts="carts" />
+    <filtered v-on:add-cart="addCart" :filtered="filtered" />
+    <item v-on:add-cart="addCart" :data="data" />
   </div>
 </template>
 
@@ -34,9 +34,27 @@ export default {
         this.filtered = []
       }
     },
+    removeCart(e){
+      console.log(e);
+      // this.carts.splice(this.carts, e.id);
+      this.carts = this.carts.filter(
+        (data) => data.id != e.id
+      );
+
+      this.data.push(e)
+       
+    },
     addCart(e){
-      this.data[e.id-1].carts=true
-      this.carts.push(e)
+      console.log(e) 
+      // this.filtered.splice(this.filtered, e.id);
+      // this.data[e.id-1].carts= true
+      this.filtered = this.filtered.filter(
+        (data) => data.id != e.id
+      );
+      this.carts.push(e);
+      this.data = this.data.filter(
+        (data) => data.id != e.id
+      );
     }
   },
   data() {

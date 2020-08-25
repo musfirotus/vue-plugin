@@ -1,8 +1,14 @@
 # vue-plugin
 
 ## Finished Features
+- Searchbox
+- Tambah ke cart
 
 ## Pending Features
+- Render Price pakai filter
+- Memunculkan alert saat tombol ditekan
+
+## Implementasi slot dan plugin
 
 ## Project setup
 ```

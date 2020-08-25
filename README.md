@@ -1,2 +1,2 @@
 # vue-plugin
-Week 6 Day 2
+## Week 6 Day 2

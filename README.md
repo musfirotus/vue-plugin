@@ -4,8 +4,6 @@
 - Searchbox
 - Tambah ke cart
 - Memunculkan alert saat tombol ditekan
-
-## Pending Features
 - Render Price pakai filter
 
 ## Implementasi slot dan plugin

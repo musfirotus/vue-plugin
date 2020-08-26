@@ -12,6 +12,7 @@
               <img class="w-full p-4 rounded-t-full" v-bind:src="l.thumbnailUrl" alt="Sunset in the mountains">
               <a class="px-auto text-center py-4">
                 <div class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2">{{l.title}}</div>
+                <div class="font-semibold text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-2">{{l.harga | currency }}</div>
               </a>
             </a>
             <button class="w-full font-bold h-10 bg-red-500" @click="removeElement(l)">

@@ -9,9 +9,10 @@
               <img class="w-full pt-4 rounded-t-full" v-bind:src="f.thumbnailUrl" alt="Sunset in the mountains">
               <div class="px-auto text-center py-4">
                 <div class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">{{f.title}}</div>
+                <div class="font-semibold text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-2">{{f.harga | currency }}</div>
               </div>
             </a>
-            <button class="w-full font-bold h-10 bg-red-500" @click="addCart(f); alert()">
+            <button class="w-full font-bold h-10 bg-red-500" @click="addCart(f)">
               Add to Cart
             </button>
           </div>
@@ -32,9 +33,6 @@ export default {
     addCart(l){
       console.log(l)
       this.$emit("add-cart", l)
-    },
-    alert(){
-      this.$emit("alert-display")
     }
   }
 }

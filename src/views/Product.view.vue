@@ -1,10 +1,10 @@
 <template>
-  <div class="container mx-auto pt-5 z-0">
+  <div class="container mx-auto pt-5 z-0" style="background-image: url(../assets/bg5.jpg)">
     <h1 class="text-center font-bold mb-5 text-5xl text-black bg-blue-300">Products</h1>
     <search :message="message" @cari-data="cariData" />
-    <cart @remove-cart="removeCart" @alert-display="alertRemove" :carts="carts" />
-    <filtered @add-cart="addCart" @alert-display="alertDisplay" :filtered="filtered" />
-    <item @add-cart="addCart" @alert-display="alertDisplay"  :data="data" />
+    <cart @remove-cart="removeCart" :carts="carts" />
+    <filtered @add-cart="addCart" :filtered="filtered" />
+    <item @add-cart="addCart" :data="data" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
         (data) => data.id != e.id
       );
       this.data.push(e)
-      this.$swal('Remove Item', 'Berhasil hapus cart!', 'OK');
+      this.$swal('Remove Item', 'Berhasil hapus cart!', 'info');
     },
     addCart(e){
       console.log(e)
@@ -51,9 +51,7 @@ export default {
       this.data = this.data.filter(
         (data) => data.id != e.id
       );
-    },
-    alertDisplay() {
-      this.$swal('Add Item', 'Berhasil tambah cart!', 'OK');
+      this.$swal('Add Item', 'Berhasil tambah cart!', 'info');
     }
   },
   data() {

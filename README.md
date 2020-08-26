@@ -1,5 +1,7 @@
 # vue-plugin
 
+## Note : Maaf, Github Pages nya belum selesai saya config, jadi belum bisa dilihat hasil deploynya..
+
 ## Finished Features
 - Searchbox
 - Tambah ke cart

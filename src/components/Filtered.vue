@@ -14,7 +14,7 @@
                 <div class="font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2">{{l.title}}</div>
               </a>
             </a>
-            <button class="w-full font-bold h-10 bg-red-500" @click="add(l)">
+            <button class="w-full font-bold h-10 bg-red-500" @click="add(l); alert()">
               Add to Cart
             </button>
           </div>
@@ -35,6 +35,9 @@ export default {
     add(l){
       console.log(l)
       this.$emit("add-cart", l)
+    },
+    alert(){
+      this.$emit("alert-display")
     }
   }
 }

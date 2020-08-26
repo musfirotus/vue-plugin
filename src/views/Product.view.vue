@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto pt-5 z-0" style="background-image: url(../assets/bg5.jpg)">
+  <div class="container mx-auto pt-5 z-0">
     <h1 class="text-center font-bold mb-5 text-5xl text-black bg-blue-300">Products</h1>
     <search :message="message" @cari-data="cariData" />
     <cart @remove-cart="removeCart" :carts="carts" />
@@ -39,7 +39,7 @@ export default {
       this.carts = this.carts.filter(
         (data) => data.id != e.id
       );
-      this.data.push(e)
+      this.data.unshift(e)
       this.$swal('Remove Item', 'Berhasil hapus cart!', 'info');
     },
     addCart(e){
@@ -47,7 +47,7 @@ export default {
       this.filtered = this.filtered.filter(
         (data) => data.id != e.id
       );
-      this.carts.push(e);
+      this.carts.unshift(e);
       this.data = this.data.filter(
         (data) => data.id != e.id
       );

@@ -7,6 +7,7 @@
 - Render Price pakai filter
 
 ## Implementasi slot dan plugin
+- Plugin : vue-sweetalert2
 
 ## Project setup
 ```
